@@ -1,0 +1,117 @@
+//background 設定
+
+@mixin img-w($width, $fit) {
+  img {
+    width: $width;
+    object-fit: $fit;
+    vertical-align: bottom;
+    @content;
+  }
+}
+
+@mixin img-h($heigh, $fit) {
+  img {
+    height: $heigh;
+    object-fit: $fit;
+    vertical-align: bottom;
+    @content;
+  }
+}
+
+// 偽元素
+@mixin after($content, $width, $height) {
+  &::after {
+    display: block;
+    content: $content;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+
+@mixin before($content, $width, $height) {
+  &::before {
+    display: block;
+    content: $content;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+
+//盒子長寬設定
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//文字
+
+@mixin font($font-size, $line-height, $font-weight, $letter-spacing) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  @content;
+}
+
+// 圖片滑鼠放
+
+@mixin hover-scale($scale, $time) {
+  transition: all $time;
+
+  &:hover {
+    transform: scale($scale);
+    @content;
+  }
+}
+
+//文字滑鼠底線
+
+@mixin hover-line($px, $color, $position, $time) {
+  @include after-bgc('', 100%, $px, 0, $color) {
+    transition: all $time;
+    @include absolute-lb(0, $position);
+    opacity: 0;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+      @content;
+    }
+  }
+}
+
+//文字滑鼠透明
+
+@mixin hover-opacity($opacity, $time) {
+  transition: all $time;
+  opacity: $opacity;
+
+  &:hover {
+    opacity: 1;
+    @content;
+  }
+}
+
+//毛玻璃
+
+@mixin blur($saturate, $blur) {
+  backdrop-filter: saturate($saturate) blur($blur);
+}
+
+//滾輪條樣式
+@mixin scrollbar-style($width, $bar-color) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    position: relative;
+    background: $bar-color;
+    border-radius: $width;
+  }
+}

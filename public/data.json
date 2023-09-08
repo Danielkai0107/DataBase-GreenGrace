@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "合果芋",
+    "price": 300,
+    "sizeInfo": "60 x 45 cm",
+    "categoryIndex": 0,
+    "categoryName": "小型植栽",
+    "categoryNameEn": "｜Small Plant",
+    "LayerSize": 1,
+    "selectedVariantIndex": 0,
+    "variants": [
+      {
+        "color": "#B29F8E",
+        "info":"水泥盆",
+        "productImage": "1.jpeg",
+        "displayImage": "1.jpeg"
+      },
+      {
+        "color": "#C5B67B",
+        "info":"陶盆",
+        "productImage": "2.jpeg",
+        "displayImage": "2.jpeg"
+      }
+    ]
+  }
+]

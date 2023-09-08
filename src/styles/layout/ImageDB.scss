@@ -1,0 +1,210 @@
+.ImageDB {
+  margin-top: $navbar-height;
+  display: flex;
+  align-items: flex-start;
+  button {
+    font-size: .9rem;
+  }
+  .aside-menu {
+    width: 20%;
+    height: calc(100vh - $navbar-height);
+    position: fixed;
+    background-color: #E4E4D0;
+    display: flex;
+    flex-flow: column;
+    &-title {
+      font-family: 'Inconsolata', monospace;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      padding: 1rem;
+      color: #303030;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.4s;
+        p {
+          font-family: 'Inconsolata', monospace;
+          letter-spacing: 2px;
+          font-size: .9rem;
+          padding: 1rem;
+          color: #303030;
+        }
+        &:hover {
+          background-color: #fff;
+        }
+        &.active {
+          background-color: #fff;
+        }
+      } 
+    }  
+  }
+  .data-area {
+    height: calc(100vh - $navbar-height);
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    width: 80%;
+    margin-left: 20%;
+    padding: 2rem;
+    font-family: 'Inconsolata', monospace;
+    overflow: hidden;
+    &-title {
+      color: #989898;
+    }
+    .title {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: #989898;
+      border-bottom: 1px solid #c1c1c1;
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+      span {
+        color: #989898;
+      }
+    }
+    .btnGroup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .file-btn {
+        padding: .55rem;
+        border: 1px solid #6c757d;
+        border-radius: .5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #6c757d;
+        }
+        span {
+          color:#6c757d;
+          &:hover {
+            color: #fff;
+          }
+        }
+        input {
+          display: none;
+        }
+      }
+    }
+    .search-area {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: #989898;
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+      input {
+        height: 2rem;
+        padding: 0 1rem;
+        border-radius: 1rem;
+        border: 1px solid #6c757d;
+      }
+      span {
+        color: #989898;
+      }
+      .no-result {
+        color: #dc3545;
+      }
+    }
+    .display-area {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      .list-container {
+        width: 60%;
+        height: 70vh;
+        display: flex;
+        flex-flow: column;
+        gap: .5rem;
+        padding: 1rem;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 0px;
+          background-color: transparent;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          border-radius: 1rem;
+          box-shadow: 0 0 6.8px 0 rgba(153, 153, 153, 0.3);
+          padding: 1rem;
+          cursor: pointer;
+          &.selected {
+            background-color: #E4E4D0;
+          }
+          &:hover {
+            background-color: #E4E4D0;
+          }
+          li {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            figure {
+              width: 4rem;
+              height: 4rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 1rem;
+              overflow: hidden;
+              img {
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          .file-btn {
+            padding: .6rem;
+            border: 1px solid #6c757d;
+            border-radius: .5rem;
+            cursor: pointer;
+            &:hover {
+              background-color: #6c757d;
+            }
+            span {
+              font-size: .9rem;
+              color:#6c757d;
+              &:hover {
+                color: #fff;
+              }
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+      .view-container {
+        width: 40%;
+        height: 30vh;
+        padding: 1rem;
+        .cancel-btn {
+          position: absolute;
+          right: 1rem;
+          top: 2.5rem;
+          z-index: 100;
+        }
+        figure {
+          height: 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-right: 2rem;
+          overflow: hidden;
+          img {
+            height: 100%;
+            object-fit: contain;
+            border-radius: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+

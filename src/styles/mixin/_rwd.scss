@@ -1,0 +1,11 @@
+@mixin md() {
+  @media all and (min-width: $sm-up) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media all and (min-width: $md-up) {
+    @content;
+  }
+}
